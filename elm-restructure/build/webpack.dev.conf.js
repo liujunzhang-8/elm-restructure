@@ -42,7 +42,12 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     quiet: true, // necessary for FriendlyErrorsPlugin
     watchOptions: {
       poll: config.dev.poll,
-    }
+    },
+    appData: require('../data.json'),
+    seller: appData.seller,
+    goods: appData.goods,
+    ratings: appData.ratings,
+
   },
   plugins: [
     new webpack.DefinePlugin({
